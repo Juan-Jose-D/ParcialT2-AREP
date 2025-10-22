@@ -31,7 +31,7 @@ Implemente el servicio para responder al método HTTP GET. Use el nombre de la f
 
 En la carpeta /src/main/resources tenemos nuestra interfaz de usuario, es una pagina sencilla que calcula los números de catalan desde 1 hasta un número dado como vemos en la siguiente imagen.
 
-![alt text](image.png)
+![alt text](/img/image.png)
 
 El calculo de este número se realiza en el servicio MathService, que se invoca desde el controlador MathController que llamamos desde nuestro front estático. El número catalan se calcula así:
 
@@ -61,3 +61,11 @@ public class MathService {
 ```
 
 Este calculo debería realizarse usando BigInteger pero por motivos prácticos no se pudo usar BigInteger entonces se usaron enteros normales.
+
+## Proxy
+
+Para nuestro proxy vamos a crear un proxyController en el que vamos a manejar la redirección.
+En AWS vamos a crear 3 instancias EC2. Nuestra principal se llamará maquinaProxy y de esta vamos a redireccionar el tráfico hacia las otras 2.
+
+![alt text](/img/image1.png)
+
