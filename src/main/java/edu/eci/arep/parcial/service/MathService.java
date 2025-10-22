@@ -1,32 +1,30 @@
 package edu.eci.arep.parcial.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class MathService {
 
-    public List<BigInteger> numerosCatalan(int numero) {
-        List<BigInteger> resultado = new ArrayList<>();
+    public List numerosCatalan(int numero) {
+        List resultado = new ArrayList<>();
 
         for (int n = 0; n < numero; n++) {
-            BigInteger catalan = factorial(2 * n)
-                    .divide(factorial(n + 1).multiply(factorial(n)));
+            int catalan = factorial(2 * n)/(factorial(n + 1) * (factorial(n)));
             resultado.add(catalan);
         }
 
         return resultado;
     }
 
-    private BigInteger factorial(int n) {
-        BigInteger fact = BigInteger.ONE;
+    private int factorial(int n) {
+        int factorial = 1;
         for (int i = 2; i <= n; i++) {
-            fact = fact.multiply(BigInteger.valueOf(i));
+            factorial = factorial * (i);
         }
-        return fact;
+        return factorial;
     }
 }
 
-
-}
