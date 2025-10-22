@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MathService {
 
-    private ArrayList<Integer> resultado;
-    private ArrayList<Integer> resultado2;
+    private ArrayList<Integer> resultado = null;
+    private ArrayList<Integer> resultado2 = null;
 
     public ArrayList<Integer> numerosCatalan(Integer numero){
         Integer sumatoria = 1;
@@ -26,6 +26,7 @@ public class MathService {
             System.out.println(resultado2);
 
         }
-        return resultado;
+        return resultado2;
     }
+
 }
