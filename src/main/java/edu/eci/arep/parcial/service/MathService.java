@@ -7,26 +7,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class MathService {
 
-    private ArrayList<Integer> resultado = null;
-    private ArrayList<Integer> resultado2 = null;
+    public List<BigInteger> numerosCatalan(int numero) {
+        List<BigInteger> resultado = new ArrayList<>();
 
-    public ArrayList<Integer> numerosCatalan(Integer numero){
-        Integer sumatoria = 1;
-
-        for (Integer i = 1; i <= numero - 1; i++){
-            Integer actual = i * (sumatoria - 1 - i);
-            sumatoria += actual;
-            resultado.add(sumatoria);
-            System.out.println(resultado);
+        for (int n = 0; n < numero; n++) {
+            BigInteger catalan = factorial(2 * n)
+                    .divide(factorial(n + 1).multiply(factorial(n)));
+            resultado.add(catalan);
         }
 
-        for (Integer i = 1; i <= numero - 1; i++){
-            Integer actual2 = 1/(i+1)*((2*i)/i);
-            resultado2.add(actual2);
-            System.out.println(resultado2);
-
-        }
-        return resultado2;
+        return resultado;
     }
+
+    private BigInteger factorial(int n) {
+        BigInteger fact = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            fact = fact.multiply(BigInteger.valueOf(i));
+        }
+        return fact;
+    }
+}
+
 
 }
