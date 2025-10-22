@@ -2,6 +2,9 @@ package edu.eci.arep.parcial.service;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MathService {
 
     private ArrayList<Integer> resultado;
