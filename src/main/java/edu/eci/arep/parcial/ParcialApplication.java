@@ -9,9 +9,9 @@ import java.util.List;
 public class ParcialApplication {
 
 	public static void main(String[] args) {
-		MathService mathService = new MathService();
-		List resultado = mathService.numerosCatalan(10);
-		System.out.println(resultado);
+		//MathService mathService = new MathService();
+		//List resultado = mathService.numerosCatalan(10);
+		//System.out.println(resultado);
 		SpringApplication.run(ParcialApplication.class, args);
 	}
 }

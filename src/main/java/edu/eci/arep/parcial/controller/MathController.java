@@ -24,6 +24,4 @@ public class MathController {
     public List getCatalan(@RequestParam Integer numero){
         return mathService.numerosCatalan(numero);
     }
-
-
 }
